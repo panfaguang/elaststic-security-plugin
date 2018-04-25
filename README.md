@@ -2,17 +2,17 @@
 - 对elasticsearch5.0.0添加用户名和密码,并且进行索引级别的权限管理
 
 
-##开发背景
+## 开发背景
 - oplate数据需要安全控制
 - xpack功能强大，但是收费
 - searchguard 安装复杂 （ssl完全搞不定）
 
-##开发原理
+## 开发原理
 - elasticsearch支持javaclient和rest两种交换方式
 -- http方式通过添加httpfilter实现，在消息头添加t认证信息
 -- javaClient 可以通过请求头传递token信息
 
-##表结构
+## 表结构
 <table>
         <tr>
             <th>字段</th>
@@ -50,7 +50,7 @@
             <th>安全域</th>
         </tr>
     </table>
-##用户对象
+## 用户对象
 ```
 @value
 public class User implements Serializable {
@@ -100,7 +100,7 @@ unzip es-security-plugin-1.0.0-SNAPSHOT.zip
   - 更新其他用户信息（只有管理员才有权限role=admin） 
 ```curl -X PUT --header 'token:ZXNfYWRtaW46ZXNfYWRtaW4=' -d '{"username":"username","indcies":["索引1","索引2"]}' 'http://127.0.0.1:9200/_oplate' ```
 
-###java client
+### java client
 
 ```
 Map<String,String> header= new HashMap<String,String>();
