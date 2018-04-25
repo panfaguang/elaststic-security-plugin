@@ -1,5 +1,5 @@
 # elaststic-security-plugin
-对elasticsearch5.0.0添加用户名和密码,并且进行索引级别的权限管理
+- 对elasticsearch5.0.0添加用户名和密码,并且进行索引级别的权限管理
 ##开发背景
 - oplate数据需要安全控制
 - xpack功能强大，但是收费
