@@ -1,6 +1,16 @@
 # elaststic-security-plugin
 对elasticsearch5.0.0添加用户名和密码,并且进行索引级别的权限管理
+##开发背景
+- oplate数据需要安全控制
+- xpack功能强大，但是收费
+- searchguard 安装复杂 （ssl完全搞不定）
 
+##开发原理
+- elasticsearch支持javaclient和rest两种交换方式
+-- http方式通过添加httpfilter实现，在消息头添加t认证信息
+-- javaClient 可以通过请求头传递token信息
+
+##表结构
 <table>
         <tr>
             <th>字段</th>
@@ -37,8 +47,28 @@
             <th>keyword</th>
             <th>安全域</th>
         </tr>
-    </table>
-
+    </table>
+##用户对象
+```
+@value
+public class User implements Serializable {
+    private static final long serialVersionUID = 3268588581047727940L;
+    // 用户名
+    private String username;
+    // 密码
+    private String password;
+    // 管理的索引
+    private Set<String> indcies;
+    // 所属安全域
+    private String realm;
+    // 访问频率
+    private Integer frequency;
+    // 角色
+    private String role;
+    // id
+    private String id;
+}
+```
 
 
 ## 安装方式
