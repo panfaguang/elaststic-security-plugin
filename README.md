@@ -27,7 +27,8 @@ unzip es-security-plugin-1.0.0-SNAPSHOT.zip
 ``` curl -X PUT --header 'token:ZXNfYWRtaW46ZXNfYWRtaW4=' -d '{"password":"新密码"}' 'http://127.0.0.1:9200/_oplate' ```
   - 更新其他用户信息（只有管理员才有权限role=admin） 
 ```curl -X PUT --header 'token:ZXNfYWRtaW46ZXNfYWRtaW4=' -d '{"username":"username","indcies":["索引1","索引2"]}' 'http://127.0.0.1:9200/_oplate' ```
-##java client
+
+###java client
 ```
 Map<String,String> header= new HashMap<String,String>();
 header.put("token", String.valueOf(Base64Coder.encode(("es_admin:es_admin").getBytes())));
