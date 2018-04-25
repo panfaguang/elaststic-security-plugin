@@ -51,6 +51,7 @@
         </tr>
     </table>
 ## 用户对象
+
 ```
 @value
 public class User implements Serializable {
@@ -74,6 +75,7 @@ public class User implements Serializable {
 
 
 ## 安装方式
+
 ```
 //进入es的目录
 cd elasticsearch-5.0.0
