@@ -1,5 +1,5 @@
 # elaststic-security-plugin
-- 对elasticsearch5.0.0添加用户名和密码,并且进行索引级别的权限管理
+- 对elasticsearch5.0.0以上添加用户名和密码,并且进行索引级别的权限管理
 
 
 ## 开发背景
