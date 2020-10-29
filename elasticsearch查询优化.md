@@ -14,4 +14,5 @@
 13. 使用 preference 参数提高缓存使用率 （慎重）
 14.  备份也会参与查询，这有助于提高吞吐量，需要正确的设置 max(max_failures, ceil(num_nodes / num_primaries) - 1)
 15. 打开自动副本选择 {"transient":{"cluster.routing.use_adaptive_replica_selection":true}}
+16. 大文档 exclude把大字段排除_source之外
 ```
